@@ -10,10 +10,15 @@ public class PoiScript : MonoBehaviour
 	public string description;
     public string name;
     public string street;
-    
+    GameObject tablero;
 
-   
-	public void MapLocation(){
+
+    private void Start()
+    {
+        GameObject tablero = GameObject.Find("Tablero");
+        tablero.SetActive(false);
+    }
+    public void MapLocation(){
 		Debug.Log("Point of interest located in the map");
 
         double x = Math.Floor(MapManager.TileX);
@@ -52,10 +57,12 @@ public class PoiScript : MonoBehaviour
         double pixelX = ((targetLong - minLong) / (maxLong - minLong));
         return pixelX;
     }
-    private void OnMouseDown()
+    private void Click()
     {
         Debug.Log(name);
         Debug.Log(street);
-
+        tablero.SetActive(true);
+        tableroScript controller = tablero.GetComponent<tableroScript>();
+        controller.Valores(name,street);
     }
 }
