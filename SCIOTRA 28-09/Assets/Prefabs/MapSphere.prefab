@@ -121,3 +121,7 @@ MonoBehaviour:
   latitude: 0
   longitude: 0
   description: 
+  name: 
+  street: 
+  namePlace: {fileID: 8617768962742091573, guid: f07c4fe583dee38489cd85bd90261ba5, type: 3}
+  locationPlace: {fileID: 2060539034545001298, guid: 631bc524127d98642bb8cb3addbc8936, type: 3}
